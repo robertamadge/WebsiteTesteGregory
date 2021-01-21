@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Login</title>
+</h:head>
+
+<h:body>
+    <div align="center">
+        <div class="ui-g">
+            <div class="ui-g-4"></div>
+            <div class="ui-g-4">
+                <div style="margin-top: 30px; border-width: 4px; border-color: #365e7d;
+                 border-style: solid; border-radius: 19px; width: 80%">
+                    <h:form id="form-login">
+                        <p:growl/>
+                        <p:outputLabel value="Email*:"/>
+                        <p:inputText value="#{usuarioMB.usuarioLogin.email}"
+                                     required="true" requiredMessage="Email é obrigatorio!"/>
+                        <br/>
+                        <p:outputLabel value="Senha*: "/>
+                        <p:password value="#{usuarioMB.usuarioLogin.senha}"
+                                    required="true" requiredMessage="Senha é obrigatorio!"/>
+                        <br/>
+                        <p:commandButton value="Logar" update="form-login"
+                                         actionListener="#{usuarioMB.logar()}"/>
+                        <br/>
+                        <p:commandLink onclick="PF('dlgCadastro').show()">
+                            Não tem conta? clique aqui para cadastrar-se
+                        </p:commandLink>
+
+                    </h:form>
+                </div>
+            </div>
+            <div class="ui-g-4"></div>
+        </div>
+    </div>
+
+    <p:dialog header="Cadastro de Usuário" widgetVar="dlgCadastro" id="dialogCadastro"
+              modal="true" closable="true" resizable="false" width="555">
+        <div class="ui-g">
+            <div class="ui-g-1"></div>
+            <div class="ui-g-11">
+                <h:form id="form-cadastro">
+                    <p:growl/>
+                    <div class="ui-g-6">
+                        <p:outputLabel value="Nome*:" for="cad-nome"/>
+                    </div>
+                    <div class="ui-g-6">
+                        <p:inputText value="#{usuarioMB.usuarioCadastro.nome}" id="cad-nome" maxlength="100"
+                                     required="true" requiredMessage="Nome é obrigatorio!"/>
+                    </div>
+                    <div class="ui-g-6">
+                        <p:outputLabel value="Email*:"/>
+                    </div>
+                    <div class="ui-g-6">
+                        <p:inputText value="#{usuarioMB.usuarioCadastro.email}" maxlength="100"
+                                     required="true" requiredMessage="Email é obrigatorio!"/>
+                    </div>
+                    <div class="ui-g-6">
+                        <p:outputLabel value="Telefone*:"/>
+
+                    </div>
+                    <div class="ui-g-6">
+                        <p:inputMask value="#{usuarioMB.usuarioCadastro.telefone}" mask="(99) 99999-9999"
+                                     required="true" requiredMessage="Telefone é obrigatorio!"/>
+                    </div>
+                    <div class="ui-g-6">
+                        <p:outputLabel value="Data de Nascimento*:"/>
+
+                    </div>
+                    <div class="ui-g-6">
+                        <p:calendar id="popup" value="#{usuarioMB.usuarioCadastro.dataNascimento}"
+                                    required="true" requiredMessage="Data de Nascimento é obrigatorio!"/>
+                    </div>
+
+                    <div class="ui-g-6">
+                        <p:outputLabel value="Senha*: "/>
+                    </div>
+
+                    <div class="ui-g-6">
+                        <p:password value="#{usuarioMB.usuarioCadastro.senha}" maxlength="20"
+                                    required="true" requiredMessage="Senha é obrigatorio!"/>
+                    </div>
+
+                    <div class="ui-g-6">
+                        <p:outputLabel value="Senha confirmar*: "/>
+                    </div>
+
+                    <div class="ui-g-6">
+                        <p:password value="#{usuarioMB.confirmacaoSenha}" maxlength="20"
+                                    required="true" requiredMessage="Confirmação da senha é obrigatorio!"/>
+                    </div>
+
+                    <div class="ui-g-12" align="center">
+                        <p:commandButton value="Cancelar" onclick="PF('dlgCadastro').hide()"
+                                         style="margin-right: 3px; width: 48%; background-color: darkred !important; color: black"/>
+                        <p:commandButton value="Cadastrar" update="form-cadastro"
+                                         actionListener="#{usuarioMB.cadastrar()}"
+                                         style="width: 48%; background-color: darkgreen !important; color: black"/>
+                    </div>
+                </h:form>
+            </div>
+        </div>
+    </p:dialog>
+</h:body>
+</html>

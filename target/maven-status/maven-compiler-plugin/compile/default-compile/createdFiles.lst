@@ -1,0 +1,14 @@
+br\com\util\JSFUtil.class
+br\com\controller\GrupoController.class
+br\com\util\MatematicaUtil.class
+br\com\util\MensagemUtil.class
+br\com\util\SessionUtil.class
+br\com\model\Grupo.class
+br\com\service\GrupoService.class
+br\com\util\ConnectionFactory.class
+br\com\util\PagesUtil.class
+br\com\DAO\GrupoDAO.class
+br\com\DAO\UsuarioDAO.class
+br\com\controller\UsuarioController.class
+br\com\model\Usuario.class
+br\com\service\UsuarioService.class
