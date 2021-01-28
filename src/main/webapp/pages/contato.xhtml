@@ -39,23 +39,21 @@
                 <div class="p-col-4"></div>
                 <div class="p-col-4">
                     <p:outputLabel class="titulos-terceiros"
-                                   value="Nome:" style="margin: 5px"/>
-                    <br/>
-                    <br/>
-                    <p:outputLabel class="titulos-terceiros"
-                                   value="Sobrenome:" style="margin: 5px"/>
-                    <br/>
-                    <br/>
-                    <p:outputLabel class="titulos-terceiros"
-                                   value="Mensagem:" style="margin: 5px"/>
-                    <br/>
-                    <br/>
-                    <div class="p-col-2">
+                                   value="Nome:" style=" margin: 5px 48px 5px 5px;"/>
                     <p:inputText styleClass="nome" required="true"/>
-                        <p:inputText styleClass="sobrenome" required="true"/>
-                        <p:inputText styleClass="mensagem" required="true"/>
-                    </div>
+                    <br/>
+                    <br/>
+                    <p:outputLabel class="titulos-terceiros"
+                                   value="Sobrenome:" style="margin: 5px 1px 5px 5px"/>
+                    <p:inputText styleClass="sobrenome" required="true"/>
+                    <br/>
+                    <br/>
                     <div align="center">
+                        <p:outputLabel class="titulos-terceiros"
+                                       value="Mensagem" style="margin: 5px; alignment: center !important"/>
+                        <p:inputTextarea rows="6" cols="33"/>
+                        <br/>
+                        <br/>
                         <p:commandButton styleClass="button-style"
                                          value="Enviar #{senhaLogin.equals(usuarioMB.usuarioLogin.senha)}"
                                          update="form-login"
@@ -66,6 +64,7 @@
                                          onclick="PF('sideBarCadastro').show();">
                         </p:commandButton>
                     </div>
+
                 </div>
                 <div class="p-col-4"></div>
             </div>
