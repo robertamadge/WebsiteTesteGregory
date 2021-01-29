@@ -4,72 +4,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:u="http://java.sun.com/jsf/html">
 
 
-<h:head>
-    <title>Home</title>
-    <link rel="StyleSheet" type="text/css" href="../css/estilo.css"/>
-    <div class="layout-topbar">
+<ui:composition template="/template/templategeral.xhtml">
 
-        <h2 class="titulo-principal">
-            Greg's Website
-        </h2>
-
-        <ul>
-            <li><a class="active"
-                   href="http://localhost:8080/WebsiteTesteGregory_war_exploded/pages/home.faces#videos">Home</a></li>
-            <li><a href="#musicas">Músicas</a></li>
-            <li><a href="https://www.youtube.com/channel/UCopPh9u4w-ozO83XYMLYo-A">Vídeos</a></li>
-            <li style="float:right"><a href="#contato">Contato</a></li>
-        </ul>
-    </div>
-
-</h:head>
-
-<h:body>
-    <div class="titulo-secundario" align="center">
-        <h3 align="center">
-            Contato
-        </h3>
-    </div>
-    <h:form>
-        <div class="panel-login">
-            <div class="p-grid">
-                <div class="p-col-4"></div>
-                <div class="p-col-4">
-                    <p:outputLabel class="titulos-terceiros"
-                                   value="Nome:" style=" margin: 5px 48px 5px 5px;"/>
-                    <p:inputText styleClass="nome" required="true"/>
-                    <br/>
-                    <br/>
-                    <p:outputLabel class="titulos-terceiros"
-                                   value="Sobrenome:" style="margin: 5px 1px 5px 5px"/>
-                    <p:inputText styleClass="sobrenome" required="true"/>
-                    <br/>
-                    <br/>
-                    <div align="center">
-                        <p:outputLabel class="titulos-terceiros"
-                                       value="Mensagem" style="margin: 5px; alignment: center !important"/>
-                        <p:inputTextarea rows="6" cols="33"/>
-                        <br/>
-                        <br/>
-                        <p:commandButton styleClass="button-style"
-                                         value="Enviar #{senhaLogin.equals(usuarioMB.usuarioLogin.senha)}"
-                                         update="form-login"
-                                         ajax="false" action="../pages/usuarios.xhtml"
-                                         onclick="PF('dlgLogIn').show();" style="margin: 15px"/>
-                        <p:commandButton styleClass="button-style" value="Cancelar"
-                                         actionListener="#{usuarioMB.limparUsuario()}" immediate="true"
-                                         onclick="PF('sideBarCadastro').show();">
-                        </p:commandButton>
-                    </div>
-
-                </div>
-                <div class="p-col-4"></div>
-            </div>
+    <ui:define name="body">
+        <div class="titulo-secundario" align="center">
+            <h3 align="center">
+                Contato
+            </h3>
         </div>
-    </h:form>
-</h:body>
+        <h:form>
+            <div class="panel-login">
+                <div class="p-grid">
+                    <div class="p-col-4"></div>
+                    <div class="p-col-4">
+                        <p:outputLabel class="titulos-terceiros"
+                                       value="Nome:" style=" margin: 5px 48px 5px 5px;"/>
+                        <p:inputText styleClass="nome" required="true"/>
+                        <br/>
+                        <br/>
+                        <p:outputLabel class="titulos-terceiros"
+                                       value="Sobrenome:" style="margin: 5px 1px 5px 5px"/>
+                        <p:inputText styleClass="sobrenome" required="true"/>
+                        <br/>
+                        <br/>
+                        <div align="center">
+                            <p:outputLabel class="titulos-terceiros"
+                                           value="Mensagem" style="margin: 5px; alignment: center !important"/>
+                            <p:inputTextarea rows="6" cols="33"/>
+                            <br/>
+                            <br/>
+                            <p:commandButton styleClass="button-style"
+                                             value="Enviar #{senhaLogin.equals(usuarioMB.usuarioLogin.senha)}"
+                                             update="form-login"
+                                             ajax="false" action="../pages/usuarios.xhtml"
+                                             onclick="PF('dlgLogIn').show();" style="margin: 15px"/>
+                            <p:commandButton styleClass="button-style" value="Cancelar"
+                                             actionListener="#{usuarioMB.limparUsuario()}" immediate="true"
+                                             onclick="PF('sideBarCadastro').show();">
+                            </p:commandButton>
+                        </div>
 
+                    </div>
+                    <div class="p-col-4"></div>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>
 </html>
