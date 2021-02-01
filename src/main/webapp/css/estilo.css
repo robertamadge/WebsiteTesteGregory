@@ -16,28 +16,27 @@
      font-size: 40px;
 
  }
+
 .titulo-secundario{
     color: beige;
     text-align: left;
     margin-left: 20px;
-    text-align: left;
-    font-size: 30px;
-    margin-top: 10%;
-
+    text-align: center;
+    font-size: 35px;
 }
 
 .titulos-terceiros{
     color: beige;
-    font-size: 20px;
+    font-size: 15px;
     alignment: left;
     float: left;
-    margin-left: 35%;
-
+    margin-top: 20px;
 }
+
 .panel-body {
     margin: 20px;
     background-color: #191919;
-    width: 50%;
+    width: 100%;
     height: 50%;
     alignment: center;
     padding: 20px;
@@ -45,11 +44,12 @@
 }
 
 .panel-login{
-    margin: auto;
-    width: auto;
+    width: 25%;
     border: 3px solid #30383c;
-    padding: 5px;
-    height: auto;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 30px !important;
+
 }
 
 .textoAbout{
@@ -60,11 +60,15 @@
 .footer{
     background-color: #323232;
     text-align: end;
-    padding: 20px;
+    padding: 10px;
     height: 40px;
-    margin-left: -10px;
-    margin-right: -10px;
-    margin-top: 50px;
+    width: 100%;
+    bottom: 0;
+    position:absolute;
+    border-top: #81D4FA 1px outset;
+
+
+
 }
 
 IMG.displayed {
@@ -74,18 +78,14 @@ IMG.displayed {
     align-items: end;
 }
 
-body{
-    background-color: #191919;
-    width: 100%;
-}
-
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #323232;
-    border-top: #bbbbbb 1px outset;
+    border-top: #81D4FA 1px outset;
+    border-bottom: #81D4FA 2px outset;
 }
 
 li {
@@ -114,7 +114,8 @@ li a:hover:not(.active) {
 }
 
 .active {
-    background-color:#81D4FA;
+    background-color: #81D4FA;
+
 }
 
 .separator-line{
@@ -124,5 +125,35 @@ li a:hover:not(.active) {
 
 body .ui-panelgrid .ui-panelgrid-cell{
     background-color: #191919;
-    height: 80%;
+    height: auto;
 }
+
+*  {
+    margin:0;
+    padding:0;
+}
+
+body {
+    height:100%;
+    background-color: #191919;
+    width: 99.5%;
+}
+
+.geral {
+    min-height:100%;
+    position:relative;
+    width:800px;
+}
+.content {
+    overflow:hidden;
+}
+.aside {
+    width:200px;
+}
+.fleft {
+    float:left;
+}
+.fright {
+    float:right;
+}
+
