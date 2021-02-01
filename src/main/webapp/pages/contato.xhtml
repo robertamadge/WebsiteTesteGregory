@@ -10,7 +10,11 @@
 
 <ui:composition template="/template/templategeral.xhtml">
 
-    <ui:define name="body" >
+    <ui:define name="head">
+        <title>Contato</title>
+    </ui:define>
+
+    <ui:define name="body">
         <div class="titulo-secundario">
             <h3 align="center" style="margin-top: 8%;">
                 Contato
@@ -20,32 +24,32 @@
         <h:form style="alignment: center">
             <div class="panel-login">
                 <p:panelGrid>
-                <p:outputLabel class="titulos-terceiros"
-                               value="Nome:" style="margin-right: 10px; position: relative"/>
-                <p:inputText styleClass="nome" required="true" />
-                <br/>
-                <br/>
-                <p:outputLabel class="titulos-terceiros"
-                               value="Sobrenome:" style="margin-right: 10px;"/>
-                <p:inputText styleClass="sobrenome" required="true" />
-                <br/>
-                <br/>
-                <div align="center">
                     <p:outputLabel class="titulos-terceiros"
-                                   value="Mensagem:" />
-                    <p:inputTextarea rows="6" cols="33" />
+                                   value="Nome:" style="margin-right: 10px;"/>
+                    <p:inputText styleClass="nome" required="true"/>
                     <br/>
                     <br/>
-                    <p:commandButton styleClass="button-style"
-                                     value="Enviar #{senhaLogin.equals(usuarioMB.usuarioLogin.senha)}"
-                                     update="form-login"
-                                     ajax="false" action="../pages/usuarios.xhtml"
-                                     onclick="PF('dlgLogIn').show();" style="margin: 15px"/>
-                    <p:commandButton styleClass="button-style" value="Cancelar"
-                                     actionListener="#{usuarioMB.limparUsuario()}" immediate="true"
-                                     onclick="PF('sideBarCadastro').show();">
-                    </p:commandButton>
-                </div>
+                    <p:outputLabel class="titulos-terceiros"
+                                   value="Sobrenome:" style="margin-right: 10px;"/>
+                    <p:inputText styleClass="sobrenome" required="true"/>
+                    <br/>
+                    <br/>
+                    <div align="center">
+                        <p:outputLabel class="titulos-terceiros"
+                                       value="Mensagem:"/>
+                        <p:inputTextarea rows="6" cols="33"/>
+                        <br/>
+                        <br/>
+                        <p:commandButton styleClass="button-style"
+                                         value="Enviar #{senhaLogin.equals(usuarioMB.usuarioLogin.senha)}"
+                                         update="form-login"
+                                         ajax="false" action="../pages/usuarios.xhtml"
+                                         onclick="PF('dlgLogIn').show();" style="margin: 15px"/>
+                        <p:commandButton styleClass="button-style" value="Cancelar"
+                                         actionListener="#{usuarioMB.limparUsuario()}" immediate="true"
+                                         onclick="PF('sideBarCadastro').show();">
+                        </p:commandButton>
+                    </div>
                 </p:panelGrid>
 
             </div>
