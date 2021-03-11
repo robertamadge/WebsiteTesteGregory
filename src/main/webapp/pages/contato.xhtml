@@ -16,9 +16,9 @@
 
     <ui:define name="body">
         <div class="titulo-secundario">
-            <h3 align="center" style="margin-top: 8%;">
+            <h4 align="center" style="margin-top: 10%;">
                 Contato
-            </h3>
+            </h4>
         </div>
 
         <h:form style="alignment: center">
@@ -34,12 +34,13 @@
                     <p:inputText styleClass="sobrenome" required="true"/>
                     <br/>
                     <br/>
-                    <div align="center">
-                        <p:outputLabel class="titulos-terceiros"
-                                       value="Mensagem:"/>
-                        <p:inputTextarea rows="6" cols="33"/>
-                        <br/>
-                        <br/>
+
+                    <p:outputLabel class="titulos-terceiros"
+                                   value="Mensagem:"/>
+                    <p:inputTextarea rows="6" cols="33"/>
+                    <br/>
+                    <br/>
+                    <div style="text-align: center; margin-top: -10px">
                         <p:commandButton styleClass="button-style"
                                          value="Enviar #{senhaLogin.equals(usuarioMB.usuarioLogin.senha)}"
                                          update="form-login"

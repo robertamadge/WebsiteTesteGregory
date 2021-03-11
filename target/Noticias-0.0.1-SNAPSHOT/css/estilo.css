@@ -31,6 +31,7 @@
     alignment: left;
     float: left;
     margin-top: 20px;
+    margin-bottom: 5px;
 }
 
 .panel-body {
@@ -49,8 +50,10 @@
     padding: 20px;
     margin: 0 auto;
     margin-top: 30px !important;
-
-}
+    alignment: center;
+    position: center;
+    display: grid;
+    }
 
 .textoAbout{
     color: beige;
@@ -64,8 +67,8 @@
     height: 40px;
     width: 100%;
     bottom: 0;
-    position:absolute;
     border-top: #81D4FA 1px outset;
+    position: fixed;
 
 
 

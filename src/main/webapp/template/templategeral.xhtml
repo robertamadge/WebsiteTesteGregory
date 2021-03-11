@@ -15,6 +15,7 @@
 
 <h:body>
     <link rel="StyleSheet" type="text/css" href="../css/estilo.css"/>
+    <p:growl/>
     <div class="layout-topbar">
         <h2 class="titulo-principal">
             Gregory Madge
@@ -24,7 +25,32 @@
                    href="http://localhost:8080/WebsiteTesteGregory_war_exploded/pages/home.faces#videos">Home</a></li>
             <li><a href="#musicas">Músicas</a></li>
             <li><a href="https://www.youtube.com/channel/UCopPh9u4w-ozO83XYMLYo-A" target="_blank">Vídeos</a></li>
-            <li style="float:right"><a href="#contato">Contato</a></li>
+                <p:commandButton widgetVar="contato" type="button" styleClass="p-mr-2"/>
+            <li style="float:right;" onclick="PF('sidebar1').show()" class="contato"><a href="#contato">Contato</a></li>
+
+
+            <p:sidebar header="Contato" widgetVar="sidebar1" baseZIndex="10000" position="right">
+                <h:form id="form-cadastro">
+                    <p:outputLabel value="Nome:* "/>
+                    <p:inputText value="#{usuarioMB.usuarioAtual}"
+                                 required="true" requiredMessage="Nome obrigatório!"
+                                 unselectable="true" style="margin: 10px;"/>
+                    <br/>
+                    <p:outputLabel value="Email:* "/>
+                    <p:inputText required="true" requiredMessage="Email obrigatório!"
+                                 unselectable="true" style="margin: 10px;"/>
+                    <br/>
+                    <p:outputLabel value="Mensagem:* "/>
+                    <p:password required="true" requiredMessage="Mensagem Orbigatória"
+                                unselectable="true" style="margin: 10px;"/>
+                    <br/>
+                    <p:commandButton styleClass="button-style" value="Enviar"
+                                     onclick="PF('sidebar1').hide();"/>
+                    <p:commandButton styleClass="button-style" value="Cancelar" immediate="true"
+                                     onclick="PF('sidebar1').hide();"/>
+                </h:form>
+            </p:sidebar>
+
         </ul>
     </div>
 
